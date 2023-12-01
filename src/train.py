@@ -18,6 +18,9 @@ import logger
 torch.backends.cudnn.benchmark = True
 __CONFIG__, __LOGS__ = 'cfgs', 'logs'
 
+import cProfile
+import re
+
 
 def set_seed(seed):
 	random.seed(seed)
@@ -94,4 +97,4 @@ def train(cfg):
 
 
 if __name__ == '__main__':
-	train(parse_cfg(Path().cwd() / __CONFIG__))
+	cProfile.run('train(parse_cfg(Path().cwd() / __CONFIG__))')
