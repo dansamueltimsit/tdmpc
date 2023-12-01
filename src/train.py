@@ -97,4 +97,4 @@ def train(cfg):
 
 
 if __name__ == '__main__':
-	cProfile.run('train(parse_cfg(Path().cwd() / __CONFIG__))')
+	cProfile.run('train(parse_cfg(Path().cwd() / __CONFIG__))', 'restats')
